@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: aliceblue;
+    /* color: #fffff1; */
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.animatedButton{
+    animation-duration: 18000ms;
+}
