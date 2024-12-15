@@ -26,7 +26,7 @@ const BrowserRouter = createBrowserRouter([
       { path: "/", element: <Homepage /> },
       { path: "/register", element: <Register /> },
       { path: "/login", element: <Login /> },
-      { path: "/post", element: <PostListPage /> },
+      { path: "/posts", element: <PostListPage /> },
       { path: "/post/:id", element: <SinglePostPage /> },
       { path: "/write", element: <Write /> },
       { path: "*", element: <div>404</div> },

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import MainCategories from "../components/MainCategories";
 import FeaturePosts from "../components/FeaturePosts";
+import PostLists from "../components/PostLists";
 
 const Homepage = () => {
   return (
@@ -15,7 +16,7 @@ const Homepage = () => {
       {/* INTro */}
       <div className="flex justify-between">
         {/* titles */}
-        <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
+        <div className="flex flex-col  md:gap-4 lg:gap-5">
           <h1 className="text-3xl py-4 sm:text-4xl md:text-5xl lg:text-6xl text-gray-800 font-bold">
             Monolog.  <br />
           </h1>
@@ -69,10 +70,14 @@ const Homepage = () => {
         <MainCategories />
 
 
-      {/* FEAtured post */}
+      {/* Featured post */}
         <FeaturePosts/>
 
       {/* posts list */}
+      <div className="">
+        <h1 className="my-8 text-2xl text-gray-600" >          Recent Posts    </h1>
+        <PostLists />
+      </div>
     </div>
   );
 };
