@@ -12,8 +12,10 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full px-4 pr-6 sm:px-6 md:px-8 lg:px-16 lx:px-32 2xl:px-64
-     h-16 md:h-20 flex items-center justify-between ">
+    <div
+      className="w-full px-4 pr-5 sm:px-6 md:px-8 lg:px-16 lx:px-32 2xl:px-64
+     h-16 md:h-20 flex items-center justify-between "
+    >
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
         <Image src="logo.png" alt="blog logo" w={32} h={32} />
@@ -32,18 +34,37 @@ function Navbar() {
         {/* MOBILE LINK LIST */}
         <div
           className={`w-full h-screen overflow-y-hidden flex flex-col items-start gap-8 text-4xl justify-start py-16 md:py-20 px-12 absolute top-16  z-50 transition-all ease-in-out duration-500
-            ${open ? "right-0 bg-blue-50 bg-opacity-95  " : "-right-full hidden"
-          }`}
+            ${
+              open ? "right-0 bg-blue-50 bg-opacity-95  " : "-right-full hidden"
+            }`}
         >
-          <Link to="/" className="group">Home <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]"/></Link>
-          <Link to="/" className="group">Trending <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]"/></Link>
-          <Link to="/" className="group">Most Popular <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]"/></Link>
-          <Link to="/" className="group">About <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]"/></Link>
-          <Link to="">
-            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
-              Login👋
-            </button>
+          <Link to="/" className="group" onClick={() => setOpen(false)}>
+            Home{" "}
+            <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]" />
           </Link>
+          <Link to="/" className="group" onClick={() => setOpen(false)}>
+            Trending{" "}
+            <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]" />
+          </Link>
+          <Link to="/" className="group" onClick={() => setOpen(false)}>
+            Most Popular{" "}
+            <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]" />
+          </Link>
+          <Link to="/" className="group" onClick={() => setOpen(false)} >
+            About{" "}
+            <hr className="w-0 group-hover:w-full opacity-0 group-hover:opacity-95 border-[2.2px] rounded-full border-slate-800 group-hover:border-blue-600 transition-all ease-in-out duration-[450ms]" />
+          </Link>
+
+          <SignedOut>
+            <Link to="/login">
+              <button className="py-3 px-5 rounded-2xl bg-blue-800 text-white" onClick={() => setOpen(false)}>
+                Login👋
+              </button>
+            </Link>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
 
